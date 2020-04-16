@@ -1,5 +1,7 @@
 # grabbeltuch-blog
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f940be1b-1448-44b6-9d8d-c387a923e212/deploy-status)](https://app.netlify.com/sites/heuristic-pasteur-9e38b6/deploys)
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
