@@ -2,10 +2,11 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'grabbeltuch-blog',
+    modulePrefix: "grabbeltuch-blog",
     environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: "/",
+    locationType: "auto",
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -13,14 +14,31 @@ module.exports = function(environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date: false,
+      },
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    blog: {
+      title: "Grabbeltuch Blog",
+      description: "Documenting the development of Grabbeltuch",
+      coverImage: "/images/blog-cover.jpg",
+
+      navigation: [
+        {
+          label: "Home",
+          route: "index",
+        },
+        {
+          label: "Built by Bent Bracke",
+          link: "https://bracke.dk"
+        },
+      ],
+    },
   };
 
   if (environment === 'development') {
@@ -45,6 +63,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.blog.host = "https://grabbeltuch.com";
   }
 
   return ENV;

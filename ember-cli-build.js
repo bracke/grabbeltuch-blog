@@ -1,10 +1,25 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const broccoliAssetRevDefaults = require("broccoli-asset-rev/lib/default-options");
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    "ember-cli-image-transformer": {
+      images: [
+        {
+          inputFilename: "lib/images/logo.svg",
+          outputFileName: "appicon-",
+          convertTo: "png",
+          destination: "assets/icons/",
+          sizes: [32, 192, 280, 512],
+        },
+      ],
+    },
+    fingerprint: {
+      extensions: broccoliAssetRevDefaults.extensions.concat(["webmanifest"]),
+      prepend: "https://grabbeltuch.com/",
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
